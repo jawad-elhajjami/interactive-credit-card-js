@@ -1,0 +1,118 @@
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.roboto-thin-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.roboto-light-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.roboto-regular-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.roboto-medium-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.roboto-bold-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.roboto-black-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+#card_holder_name_text span{
+  display: inline-block;
+}
+/* Animations */
+
+
+@keyframes shake {
+  0%{
+    transform: translateX(-20px);
+  }
+  25%{
+    transform: translateX(20px);
+  }
+  50%{
+    transform: translateX(-20px);
+  }
+  75%{
+    transform: translateX(-10px);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+
+@keyframes blurEffect {
+  0% {
+      transform: scale(1);
+      filter: blur(0);
+  }
+  50% {
+      transform: scale(1.2);
+      filter: blur(2px);
+  }
+  100% {
+      transform: scale(1);
+      filter: blur(0);
+  }
+}
+
+.number {
+  transition: transform 0.2s ease, filter 0.2s ease; /* Smooth transition */
+}
+.number.animate {
+  animation: blurEffect 0.5s ease forwards; /* Trigger the blur effect */
+}
+
