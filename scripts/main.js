@@ -7,6 +7,7 @@
 
 // elements
 const form = document.getElementById("form");
+const cc_logo = document.getElementById("cc_logo");
 
 // inputs
 const card_holder_name = document.getElementById("cardholder_name");
@@ -30,13 +31,9 @@ const DEFAULT_MM = "00";
 const DEFAULT_YY = "00";
 
 // main functions
-// 1. form submit
-const formSubmit = () => {
-    alert("hey");
-}
 
+// handle Name change
 let previousValue = ""; // Track previous input
-
 const changeName = () => {
     const currentValue = card_holder_name.value; // Get current input value
 
@@ -94,17 +91,13 @@ const renderDefaultUI = () => {
 
 // invoke error shake animation
 const invokeError = (input) => {
-    input.style.animation = `shake .5s ease forwards`;
-    input.style.borderColor = "#f54242";
-    input.style.color = "#f54242";
-}
+    input.classList.add("error"); 
+};
 
-// reset field styles
 const resetFieldStyles = (input) => {
-    input.style.animation = ``;
-    input.style.borderColor = "";
-    input.style.color = "";
-}
+    input.classList.remove("error");
+};
+
 
 
 // event handlers
@@ -247,6 +240,20 @@ card_number.addEventListener('keyup', event => {
         } else {
             numbers[i].textContent = '#'; // Reset to '#' if no input
         }
+    }
+
+    // Display corresponding card logo
+    const firstDigit = card_number.value[0];
+    cc_logo.style.visibility = 'visible';
+    if (firstDigit == "5" || firstDigit == "2") {
+        cc_logo.setAttribute("src", "assets/icons/mastercard.png");
+    } else if (firstDigit == "4") {
+        cc_logo.setAttribute("src", "assets/icons/visa.png");
+    } else if (firstDigit == "3") {
+        cc_logo.setAttribute("src", "assets/icons/amex.png");
+    } else {
+        cc_logo.setAttribute("src", ""); // Clear logo if input is invalid 
+        cc_logo.style.visibility = 'hidden';
     }
 
     // Handle backspace functionality

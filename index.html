@@ -9,65 +9,71 @@
     <title>Interactive credit card form</title>
 </head>
 <body>
-    <div class="container grid grid-cols-5 min-h-screen min-w-full mx-auto max-w-full relative">
-        <div class="h-full bg-gradient-to-b bg-purple-950 col-span-2 min-h-screen relative">
-            <!-- blurry circles start -->
-            <div class="absolute w-72 h-72 top-20 left-10 bg-blue-500 blur-3xl rounded-full"></div>
-            <div class="absolute w-72 h-96  top-40 left-20 bg-blue-700 opacity-40 blur-3xl rounded-full"></div>
-            <div class="absolute w-72 h-96  top-50 left-25 bg-purple-500 opacity-40 blur-3xl rounded-full"></div>
-            <!-- blurry circles end -->
+    
+    <div class="container grid 2xl:grid-cols-5 2xl:min-h-screen lg:min-h-screen mx-auto max-w-[1920px] relative lg:grid-cols-4 md:grid-cols-1">
+         
+        <div class="h-full bg-purple-200 col-span-2 2xl:min-h-screen lg:min-h-fit relative">
+            <div class="cards-container flex-col items-center justify-center 2xl:h-screen gap-8 p-12 2xl:flex bg-[url('assets/images/background.png')] bg-cover bg-no-repeat bg-center">
+                <div class="credit-card-front rounded-xl bg-gradient-to-r from-gray-700 to-gray-900 shadow-2xl p-8 flex flex-col justify-between max-w-[500px] 
+                2xl:w-[500px] 2xl:h-[270px] lg:w-[400px] lg:h-[250px] md:w-[400px] md:h-[250px] h-fit overflow-hidden relative gap-8 mx-auto mb-8">
 
-            <div class="credit-card-front xl:w-[550px] xl:h-[300px] lg:w-[400px] lg:h-[250px] rounded-xl bg-gradient-to-r from-gray-700 to-gray-900 absolute 2xl:-right-[20%] 2xl:top-[10%] md:-right-[20%] md:top-[10%] md:w-[350px] md:h-[200px] shadow-2xl p-8 flex flex-col justify-between overflow-hidden">
+                    <!-- Glowing shapes -->
+                    <div class="absolute right-0 w-32 h-32 bg-blue-500 rounded-full blur-3xl mix-blend-lighten"></div>
+                    <div class="absolute top-20 right-20 w-32 h-32 bg-purple-500 rounded-full blur-3xl mix-blend-lighten"></div>
+                    <div class="absolute top-25 right-1/2 w-64 h-32 bg-orange-500 rounded-full blur-3xl mix-blend-lighten"></div>
 
-                <!-- Glowing shapes -->
-                <div class="absolute right-0 w-32 h-32 bg-blue-500 rounded-full blur-3xl mix-blend-lighten"></div>
-                <div class="absolute top-20 right-20 w-32 h-32 bg-purple-500 rounded-full blur-3xl mix-blend-lighten"></div>
-                <div class="absolute top-25 right-1/2 w-64 h-32 bg-orange-500 rounded-full blur-3xl mix-blend-lighten"></div>
+                    <div class="flex items-between w-full">
+                        <div class="flex items-center w-full">
+                            <div class="w-12 h-12 rounded-full bg-white mr-2"></div>
+                            <div class="w-8 h-8 rounded-full bg-transparent border-2 border-white"></div>
+                        </div>
+                        <img src="assets/icons/mastercard.png" id="cc_logo" alt="cc_logo">
+                    </div>
 
-                <div class="flex items-center">
-                    <div class="w-16 h-16 rounded-full bg-white mr-4"></div>
-                    <div class="w-8 h-8 rounded-full bg-transparent border-2 border-white"></div>
+                    <h3 class="text-md text-white text-center 2xl:text-4xl lg:text-3xl md:text-xl flex justify-between w-full" id="card_number_text">
+                        <div class="number_group flex">
+                            <div class="number tracking-widest"></div>
+                            <div class="number tracking-widest"></div>
+                            <div class="number tracking-widest"></div>
+                            <div class="number tracking-widest"></div>
+                        </div>
+                        <div class="number_group flex">
+                            <div class="number tracking-widest"></div>
+                            <div class="number tracking-widest"></div>
+                            <div class="number tracking-widest"></div>
+                            <div class="number tracking-widest"></div>
+                        </div>
+                        <div class="number_group flex">
+                            <div class="number tracking-widest"></div>
+                            <div class="number tracking-widest"></div>
+                            <div class="number tracking-widest"></div>
+                            <div class="number tracking-widest"></div>
+                        </div>
+                        <div class="number_group flex">
+                            <div class="number tracking-widest"></div>
+                            <div class="number tracking-widest"></div>
+                            <div class="number tracking-widest"></div>
+                            <div class="number tracking-widest"></div>
+                        </div>
+                    </h3>
+                    <div class="flex space-between w-full">
+                        <h4 class="w-full text-left text-white roboto-regular tracking-widest" id="card_holder_name_text"></h4>
+                        <h5 class="w-full text-right text-white roboto-light"><span id="month_text"></span>/<span id="year_text"></span></h5>
+                    </div>
                 </div>
-                <h3 class="text-md text-white text-center 2xl:text-4xl lg:text-3xl md:text-xl flex justify-between w-full" id="card_number_text">
-                    <div class="number_group flex">
-                        <div class="number tracking-widest"></div>
-                        <div class="number tracking-widest"></div>
-                        <div class="number tracking-widest"></div>
-                        <div class="number tracking-widest"></div>
+                <div class="credit-card-back 2xl:w-[500px] max-w-[500px] 2xl:h-[270px] lg:w-[400px] lg:h-[250px] md:w-[400px] md:h-[250px] sm:w-full md:h-[200px] rounded-xl bg-gray-200 shadow-2xl flex flex-col justify-between overflow-hidden gap-12 py-4 mx-auto h-fit">
+                    <div class="bg-gray-900 w-full h-12 mt-8"></div>
+                    <div class="bg-gray-300 w-[90%] h-12 m-auto mt-12 rounded-lg relative">
+                        <span class="absolute right-3 top-3 roboto-medium" id="cvc_text"></span>
                     </div>
-                    <div class="number_group flex">
-                        <div class="number tracking-widest"></div>
-                        <div class="number tracking-widest"></div>
-                        <div class="number tracking-widest"></div>
-                        <div class="number tracking-widest"></div>
-                    </div>
-                    <div class="number_group flex">
-                        <div class="number tracking-widest"></div>
-                        <div class="number tracking-widest"></div>
-                        <div class="number tracking-widest"></div>
-                        <div class="number tracking-widest"></div>
-                    </div>
-                    <div class="number_group flex">
-                        <div class="number tracking-widest"></div>
-                        <div class="number tracking-widest"></div>
-                        <div class="number tracking-widest"></div>
-                        <div class="number tracking-widest"></div>
-                    </div>
-                </h3>
-                <div class="flex space-between w-full">
-                    <h4 class="w-full text-left text-white roboto-regular tracking-widest" id="card_holder_name_text"></h4>
-                    <h5 class="w-full text-right text-white roboto-light"><span id="month_text"></span>/<span id="year_text"></span></h5>
-                </div>
-            </div>
-            <div class="credit-card-back xl:w-[550px] xl:h-[300px] lg:w-[400px] lg:h-[250px]  rounded-xl bg-gray-200 absolute -right-[15%] top-[52%] shadow-2xl">
-                <div class="bg-gray-900 w-full h-12 mt-8"></div>
-                <div class="bg-gray-300 w-[90%] h-12 m-auto mt-12 rounded-lg relative">
-                    <span class="absolute right-3 top-3 roboto-medium" id="cvc_text"></span>
                 </div>
             </div>
         </div>
-        <div class="col-span-3">
-            <form method="POST" id="form" class="flex items-center justify-center flex-col h-screen w-[40%] m-auto">
+        <div class="2xl:col-span-3 lg:col-span-2 col-span-2 relative overflow-hidden">
+            
+            <form method="POST" id="form" class="flex items-center justify-center flex-col 2xl:h-screen 2xl:w-[60%] md:w-[85%] mx-auto p-12 ">
+                <h1 class="2xl:text-4xl xl:text-3xl text-2xl bg-gradient-to-r from-purple-300 via-purple-500 to-purple-600 bg-clip-text text-transparent mb-4 roboto-medium text-center">Complete your payment</h1>
+                <p class="text-center text-gray-600 roboto-light mb-12">All transactions are secure, and encrypted</p>
                 <div class="input-container flex flex-col w-full mb-4">
                     <label for="cardholder_name" class="text-gray-900 roboto-regular mb-2">CARDHOLDER NAME</label>
                     <input type="text" placeholder="e.g. Jane Appleased" id="cardholder_name" class="outline-none border-2 border-gray-200 p-4 rounded-lg text-xl roboto-medium focus:border-gray-500 duration-500">
@@ -96,7 +102,6 @@
             </form>
         </div>
     </div>
-
     <script src="scripts/main.js"></script>
 </body>
 </html>
